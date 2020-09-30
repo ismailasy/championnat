@@ -9,9 +9,11 @@ import javax.swing.JInternalFrame;
 import javax.swing.JToolBar;
 
 import control.EquipeControler;
+import control.JoueurControler;
 
 import view.IEditComponent;
 import view.IViewComponent;
+import view.JoueurView;
 
 public class CustomToolBar extends JToolBar implements ActionListener {
 	private static final long serialVersionUID = 1L;
@@ -128,7 +130,11 @@ public class CustomToolBar extends JToolBar implements ActionListener {
 						} 
 						else
 							if(source == deleteButton){
-
+								JInternalFrame view = JMain.fenPrincipale.getCurrentView();
+								if(view != null){
+									if(view instanceof JoueurView)
+										;
+								}
 							}
 							else
 								if(source == saveButton){
